@@ -1,5 +1,5 @@
 import config
-from app.main import app
+from app.web import app
 from app.proxy import check
 from multiprocessing import Process
 

@@ -1,12 +1,9 @@
 import requests
-import redis
 import json
 import time
 import gevent
 import config
-
-pool= redis.ConnectionPool(host=config.redis_host, port=config.redis_port, decode_responses=True)
-r=redis.Redis(connection_pool=pool)
+from app import r
 
 
 def get_proxy(url):

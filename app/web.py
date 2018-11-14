@@ -2,7 +2,7 @@ import random
 import redis
 import config
 from app import r
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -19,9 +19,11 @@ def index():
 
 @app.route('/random/')
 def random_ip():
-    ip_list = r.lrange('proxy', 1, config.max_ip)
-    print(type(ip_list))
-    return random.choice(ip_list)
+    try:
+        ip_list = r.lrange('proxy', 1, config.max_ip)
+        return jsonify(random.choice(ip_list))
+    except:
+        return '代理地址池已枯竭'
 
 if __name__ == "__main__":
     app.run()

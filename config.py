@@ -7,7 +7,7 @@ timeout=5
 #代理地址池数量
 max_ip = 10
 #redis 服务器地址
-redis_host = '192.168.56.101'
+redis_host = '127.0.0.1'
 redis_port = 6379
 #web debug模式
 DEBUG = True
