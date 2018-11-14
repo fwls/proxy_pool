@@ -4,7 +4,7 @@ from app.proxy import check
 from multiprocessing import Process
 
 def start_web():
-    app.run()
+    app.run(host=config.host)
 
 def start_proxy(url):
     check(url)

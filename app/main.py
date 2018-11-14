@@ -1,14 +1,14 @@
-from flask import Flask
 import random
 import redis
 import config
+from app import r
+from flask import Flask
 
 app = Flask(__name__)
 
 app.config['DEBUG'] = config.DEBUG
 
-pool= redis.ConnectionPool(host=config.redis_host, port=config.redis_port, decode_responses=True)
-r=redis.Redis(connection_pool=pool)
+
 
 @app.route('/')
 def index():

@@ -11,3 +11,4 @@ redis_host = '192.168.56.101'
 redis_port = 6379
 #web debug模式
 DEBUG = False
+host = '0.0.0.0'
